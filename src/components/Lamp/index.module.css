@@ -10,4 +10,14 @@
   left: 0;
   right: 0;
   bottom: 0;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.intensity{
+  font-size:150px;
+  color:#fff;
+  text-align: center;
+  opacity: 50%;
 }
