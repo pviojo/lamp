@@ -1,2 +1,2 @@
-# lamp
-Created with CodeSandbox
+# Lamp
+
