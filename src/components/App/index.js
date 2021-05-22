@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-import Lamp from '../Lamp';
+// import Lamp from '../Lamp';
+import LampStars from '../LampStars';
 import ColorSelector from '../ColorSelector';
 
 import styles from './index.module.css';
@@ -36,7 +37,7 @@ const App = () => {
         tabIndex={0}
         role="button"
       >
-        <Lamp color={selectedColor} intensity={intensity} showIntensity />
+        <LampStars color={selectedColor} stars={400} />
       </div>
       <div className={styles.selector}>
         <ColorSelector onSelect={onSelectColor} selected={selectedColor} />
