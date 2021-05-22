@@ -6,14 +6,17 @@ import Star from '../Star';
 const LampStars = ({ color, stars }) => {
   const [starsObj, setStarsObj] = useState([]);
   useEffect(() => {
-    const nstars = [...Array(stars).keys()].map(() => {
-      const k = Math.random() * 100 * 100;
-      const x = k % 100;
-      const y = Math.round(k / 100);
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    const cols = Math.round(Math.sqrt(stars) * (w / h));
+    const rows = Math.round(Math.sqrt(stars) * (h / w));
+    const nstars = [...Array(cols * rows).keys()].map((i) => {
+      const x = ((i % cols) + (Math.random() * 0.5 - 0.25)) * (100 / cols);
+      const y = (Math.floor(i / cols) + (Math.random() * 0.5 - 0.25)) * (100 / rows);
       return {
         x,
         y,
-        size: 5 + (10 * Math.random()),
+        size: 1 + (15 * Math.random()),
         angle: Math.random() * 360,
       };
     });
